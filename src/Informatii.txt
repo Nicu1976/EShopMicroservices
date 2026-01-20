@@ -1,0 +1,1 @@
+Marten converteste modelul (Product) in tabel in baza de date, posibul sa nu se faca cu EF
