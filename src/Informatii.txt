@@ -1,1 +1,5 @@
+
+
 Marten converteste modelul (Product) in tabel in baza de date, posibul sa nu se faca cu EF
+45. Vertical Slice practic traverseaza toate layerele (UI, Application, Domain, Infrastructure)
+
