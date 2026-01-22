@@ -3,3 +3,41 @@
 Marten converteste modelul (Product) in tabel in baza de date, posibul sa nu se faca cu EF
 45. Vertical Slice practic traverseaza toate layerele (UI, Application, Domain, Infrastructure)
 
+PS C:\Users\georgepetru> docker ps
+CONTAINER ID   IMAGE         COMMAND                  CREATED       STATUS       PORTS                    NAMES
+f8b7865ae7e9   postgres:18   "docker-entrypoint.s…"   2 hours ago   Up 2 hours   0.0.0.0:5432->5432/tcp   catalogdb
+PS C:\Users\georgepetru> docker exec -it f8b7865ae7e9 bash
+root@f8b7865ae7e9:/# psql -U postgres
+psql (18.1 (Debian 18.1-1.pgdg13+2))
+Type "help" for help.
+
+postgres=# \l
+
+ Name    |  Owner   | Encoding | Locale Provider |  Collate   |   Ctype    | Locale | ICU Rules |   Access privileges 
+-----------+----------+----------+-----------------+------------+------------+--------+-----------+-----------------------
+ CatalogDb | postgres | UTF8     | libc            | en_US.utf8 | en_US.utf8 |        |           |
+ postgres  | postgres | UTF8     | libc            | en_US.utf8 | en_US.utf8 |        |           |
+ template0 | postgres | UTF8     | libc            | en_US.utf8 | en_US.utf8 |        |           | =c/postgres          +
+           |          |          |                 |            |            |        |           | postgres=CTc/postgres
+ template1 | postgres | UTF8     | libc            | en_US.utf8 | en_US.utf8 |        |           | =c/postgres          +
+           |          |          |                 |            |            |        |           | postgres=CTc/postgres
+(4 rows)
+
+press q to exit
+
+postgres-# \c CatalogDb
+You are now connected to database "CatalogDb" as user "postgres".
+CatalogDb-#
+
+to see the tables
+
+CatalogDb-# \d 
+Did not find any relations.
+CatalogDb-#
+
+CatalogDb=# \d
+ public | mt_doc_product | table | postgres
+
+CatalogDb=# SELECT * FROM mt_doc_product;
+
+
