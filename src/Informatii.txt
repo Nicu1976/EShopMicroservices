@@ -40,4 +40,7 @@ CatalogDb=# \d
 
 CatalogDb=# SELECT * FROM mt_doc_product;
 
+docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+sau putem face docker-compose ca proiect primar si facem run, selectam in loc de htps docker-compose
+
 
