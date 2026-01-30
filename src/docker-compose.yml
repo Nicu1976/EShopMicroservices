@@ -27,10 +27,13 @@ services:
     build:
       context: .
       dockerfile: Services/Discount/Discount.Grpc/Dockerfile
+    volumes:
+      - discountdata:/app/data
 
 volumes:
   postgres_catalog:
   postgres_basket:
+  discountdata:
 
 
 
