@@ -49,4 +49,48 @@ in acest moment suntem in redis si putem vedea variabilele
 KEYS * 
 ne arata tate cheile din redis
 
+Add-Migration InitialCreate trebuie sa fie inainte de a pune linia de cod in Program.cs //app.UseMigration();
+daca nu este comentata nu va functiona
+
+Update-Database
+
+Daca vrem sa facem o noua migrare la fel Add-Migration InitialCreate trebuie sa facem Remove-Migration si apoi sa stergem tot ce se afla in debug folder 
+apoi clean solution si build all
+
+Deci este foarte corect ce scrie mai sus:
+1. Daca avem migrare facuta o stergem cu Remove-Migration (cred ca ar fi bine sa o executam oricum)
+2. Stergem tot ce se afla in debug si obj folder
+3. Clean solution si rebuild solution
+4. Create-Migration First-Migration
+5. Update-Database
+6. enable la app.UseMigration()
+
+
+GetDiscount:
+{
+    "productName":".IPhone X"
+}
+
+CreateDiscount
+{
+    "coupon": {
+        "productName": "New IPhone 15",
+        "description": "Description of New IPhone 15",
+        "amount": 200
+    }
+}
+
+UpdateDiscount
+{
+    "coupon":
+    {
+        "id": 1,
+        "productName": "New IPhone 15 updated",
+        "description": "Description of New IPhone 15 updated",
+        "amount": 250
+    }
+}
+
+
+
 
